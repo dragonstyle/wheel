@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Quarto"
+version = "0.0.1"
+authors = [
+  { name="Charles Teague", email="cteague@gmail.com" },
+]
+description = "A package for distributing Quarto."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/quarto-dev/quarto-cli"
+Issues = "https://github.com/quarto-dev/quarto-cli/issues"
+
+[tool.hatch.build.targets.wheel.force-include]
+"bin" = "pkg"
+"share" = "pkg"
+
+[project.scripts]
+cli-name = "scripts.quarto:run"
+
