@@ -26,36 +26,36 @@ jobs:
         with:
           repository: "quarto-dev/quarto-cli"
           latest: true
-          fileName: "quarto-1.4.542-macos.tar.gz"
+          fileName: "quarto-*-macos.tar.gz"
 
       - if: contains(matrix.os, 'macos')
         run: |
-          tar -xvf quarto-1.4.542-macos.tar.gz
-          rm quarto-1.4.542-macos.tar.gz
+          tar -xvf quarto-*-macos.tar.gz
+          rm quarto-*-macos.tar.gz
 
       - uses: robinraju/release-downloader@v1.8
         if: contains(matrix.os, 'windows')
         with:
           repository: "quarto-dev/quarto-cli"
           latest: true
-          fileName: "quarto-1.4.542-win.zip"
+          fileName: "quarto-*-win.zip"
 
       - if: contains(matrix.os, 'ubuntu')
         run: |
-          unzip -xvf quarto-1.4.542-win.zip
-          rm quarto-1.4.542-win.zip
+          unzip -xvf quarto-*-win.zip
+          rm quarto-*-win.zip
 
       - uses: robinraju/release-downloader@v1.8
         if: contains(matrix.os, 'ubuntu')
         with:
           repository: "quarto-dev/quarto-cli"
           latest: true
-          fileName: "quarto-1.4.542-linux-arm64.tar.gz"
+          fileName: "quarto-*-linux-arm64.tar.gz"
 
       - if: contains(matrix.os, 'ubuntu')
         run: |
-          tar -xvf quarto-1.4.542-linux-arm64.tar.gz
-          rm quarto-1.4.542-linux-arm64.tar.gz
+          tar -xvf quarto-*-linux-arm64.tar.gz
+          rm quarto-*-linux-arm64.tar.gz
 
       - uses: pypa/cibuildwheel@v2.16
 
