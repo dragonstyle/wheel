@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [macos-latest]
 
     steps:
       - uses: actions/checkout@v4
@@ -57,7 +57,13 @@ jobs:
           tar -xvf quarto-*-linux-arm64.tar.gz
           rm quarto-*-linux-arm64.tar.gz
 
-      - uses: pypa/cibuildwheel@v2.16
+      - name: Install cibuildwheel
+        run: python -m pip install cibuildwheel==2.16.2
+
+      - name: Build wheels
+        run: python -m cibuildwheel --output-dir wheelhouse
+        env:
+          CIBW_PLATFORM: valuecp39-macosx_universal2
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
