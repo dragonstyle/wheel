@@ -40,7 +40,7 @@ jobs:
           latest: true
           fileName: "quarto-*-win.zip"
 
-      - if: contains(matrix.os, 'ubuntu')
+      - if: contains(matrix.os, 'windows')
         run: |
           unzip -xvf quarto-*-win.zip
           rm quarto-*-win.zip
