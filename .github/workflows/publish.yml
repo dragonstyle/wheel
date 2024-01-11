@@ -25,8 +25,8 @@ jobs:
         if: contains(matrix.os, 'macos')
         with:
           repository: "quarto-dev/quarto-cli"
-        latest: true
-        fileName: "quarto-1.4.542-macos.tar.gz"
+          latest: true
+          fileName: "quarto-1.4.542-macos.tar.gz"
 
       - if: contains(matrix.os, 'macos')
         run: |
@@ -37,8 +37,8 @@ jobs:
         if: contains(matrix.os, 'windows')
         with:
           repository: "quarto-dev/quarto-cli"
-        latest: true
-        fileName: "quarto-1.4.542-win.zip"
+          latest: true
+          fileName: "quarto-1.4.542-win.zip"
 
       - if: contains(matrix.os, 'ubuntu')
         run: |
@@ -49,8 +49,8 @@ jobs:
         if: contains(matrix.os, 'ubuntu')
         with:
           repository: "quarto-dev/quarto-cli"
-        latest: true
-        fileName: "quarto-1.4.542-linux-arm64.tar.gz"
+          latest: true
+          fileName: "quarto-1.4.542-linux-arm64.tar.gz"
 
       - if: contains(matrix.os, 'ubuntu')
         run: |
