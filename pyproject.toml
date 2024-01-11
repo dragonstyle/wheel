@@ -25,6 +25,10 @@ Issues = "https://github.com/quarto-dev/quarto-cli/issues"
 "bin" = "pkg"
 "share" = "pkg"
 
+[tool.hatch.build.targets.wheel]
+universal = false
+platforms = ["macosx_10_9_universal2"]
+
 [project.scripts]
 cli-name = "scripts.quarto:run"
 
