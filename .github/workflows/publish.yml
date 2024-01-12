@@ -30,7 +30,6 @@ jobs:
 
       - if: contains(matrix.os, 'macos')
         run: |
-          mkdir quarto
           mv quarto-*-macos.tar.gz quarto
           pushd quarto
           tar -xvf quarto-*-macos.tar.gz
