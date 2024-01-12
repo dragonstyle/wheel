@@ -30,8 +30,18 @@ jobs:
 
       - if: contains(matrix.os, 'macos')
         run: |
+          mkdir quarto
+          mv quarto-*-macos.tar.gz quarto
+          pushd quarto
           tar -xvf quarto-*-macos.tar.gz
           rm quarto-*-macos.tar.gz
+          cd bin
+          touch __init.py__
+          cd ..
+          cd share
+          touch __init.py__
+          cd ..
+          popd quarto
 
       - uses: robinraju/release-downloader@v1.8
         if: contains(matrix.os, 'windows')

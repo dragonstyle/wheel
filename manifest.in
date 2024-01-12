@@ -1,0 +1,2 @@
+recursive-include quarto/bin *
+recursive-include quarto/share *
