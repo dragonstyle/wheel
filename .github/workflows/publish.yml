@@ -64,7 +64,8 @@ jobs:
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_BUILD: cp3*-macosx_x86_64 cp3*-macosx_arm64
-          CIBW_ARCHS_MACOS: universal2
+          CIBW_PLATFORM: macos
+          CIBW_ARCHS: universal2
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
