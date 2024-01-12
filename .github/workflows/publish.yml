@@ -74,7 +74,7 @@ jobs:
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_BUILD_VERBOSITY: 1
-          CIBW_BUILD: cp3*-macosx_universal2
+          CIBW_BUILD: py3*-macosx_universal2
           CIBW_PLATFORM: macos
           CIBW_ARCHS: universal2
 
