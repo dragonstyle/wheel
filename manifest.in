@@ -1,2 +1,3 @@
 recursive-include quarto/bin *
 recursive-include quarto/share *
+include scripts/quarto.py

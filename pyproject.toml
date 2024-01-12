@@ -27,7 +27,7 @@ Issues = "https://github.com/quarto-dev/quarto-cli/issues"
 
 [tool.setuptools]
 include-package-data = true
-packages = ["quarto"]
+packages = ['scripts', 'quarto']
 
 [project.scripts]
 quarto = "scripts.quarto:run"
