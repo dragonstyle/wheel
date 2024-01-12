@@ -71,12 +71,13 @@ jobs:
         run: python -m pip install cibuildwheel==2.16.2
 
       - name: Build wheels
-        run: python -m cibuildwheel --output-dir wheelhouse
+        run: python -m build
         env:
           CIBW_BUILD_VERBOSITY: 1
           CIBW_BUILD: cp3*-macosx_universal2
           CIBW_PLATFORM: macos
           CIBW_ARCHS: universal2
+          CIBW_REPAIR_WHEEL_COMMAND: ""
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
