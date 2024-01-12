@@ -71,7 +71,7 @@ jobs:
         run: python -m pip install cibuildwheel==2.16.2
 
       - name: Build wheels
-        run: python -m build
+        run: python -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_BUILD_VERBOSITY: 1
           CIBW_BUILD: cp3*-macosx_universal2
