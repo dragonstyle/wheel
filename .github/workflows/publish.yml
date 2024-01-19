@@ -64,6 +64,9 @@ jobs:
 
           tar -xvf quarto-*-linux-arm64.tar.gz
           rm quarto-*-linux-arm64.tar.gz
+          mv quarto-*/share .
+          mv quarto-*/bin .
+          rm -rf quarto-*/
           popd
 
       - name: Initialize Modules
@@ -75,8 +78,8 @@ jobs:
           cd share
           touch __init.py__
           cd ..
-          popd quarto
-          
+          popd
+  
       
       - name: Install cibuildwheel
         run: python -m pip install cibuildwheel==2.16.2
