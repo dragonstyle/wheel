@@ -48,6 +48,10 @@ jobs:
           pushd quarto
           unzip -xvf quarto-*-win.zip
           rm quarto-*-win.zip
+          
+          mv -v quarto-*/share .
+          mv -v quarto-*/bin .
+          rm -rfv quarto-*/
           popd
           
       - uses: robinraju/release-downloader@v1.8
