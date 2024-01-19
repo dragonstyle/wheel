@@ -51,7 +51,7 @@ jobs:
           
           mv -v quarto-*/share .
           mv -v quarto-*/bin .
-          rm -rfv quarto-*/
+          rm -rf quarto-*/
           popd
           
       - uses: robinraju/release-downloader@v1.8
