@@ -33,13 +33,7 @@ jobs:
           pushd quarto
           tar -xvf quarto-*-macos.tar.gz
           rm quarto-*-macos.tar.gz
-          cd bin
-          touch __init.py__
-          cd ..
-          cd share
-          touch __init.py__
-          cd ..
-          popd quarto
+          popd 
 
       - uses: robinraju/release-downloader@v1.8
         if: contains(matrix.os, 'windows')
@@ -50,9 +44,12 @@ jobs:
 
       - if: contains(matrix.os, 'windows')
         run: |
+          mv quarto-*-win.zip quarto
+          pushd quarto
           unzip -xvf quarto-*-win.zip
           rm quarto-*-win.zip
-
+          popd
+          
       - uses: robinraju/release-downloader@v1.8
         if: contains(matrix.os, 'ubuntu')
         with:
@@ -62,9 +59,25 @@ jobs:
 
       - if: contains(matrix.os, 'ubuntu')
         run: |
+          mv quarto-*-linux-arm64.tar.gz quarto
+          pushd quarto
+
           tar -xvf quarto-*-linux-arm64.tar.gz
           rm quarto-*-linux-arm64.tar.gz
+          popd
 
+      - name: Initialize Modules
+        run: |
+          pushd quarto
+          cd bin
+          touch __init.py__
+          cd ..
+          cd share
+          touch __init.py__
+          cd ..
+          popd quarto
+          
+      
       - name: Install cibuildwheel
         run: python -m pip install cibuildwheel==2.16.2
 
