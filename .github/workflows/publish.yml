@@ -84,8 +84,8 @@ jobs:
         env:
           CIBW_BUILD_VERBOSITY: 1
           CIBW_BUILD: cp3*-win_amd64
-          CIBW_PLATFORM: win
-          CIBW_ARCHS: universal2
+          CIBW_PLATFORM: windows
+          CIBW_ARCHS: amd64
           CIBW_REPAIR_WHEEL_COMMAND: ""
       
       - name: Build Linux wheels
