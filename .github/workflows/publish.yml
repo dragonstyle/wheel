@@ -94,7 +94,7 @@ jobs:
         env:
           CIBW_BUILD_VERBOSITY: 1
           CIBW_BUILD: cp3*-manylinux_x86_64
-          CIBW_PLATFORM: manylinux
+          CIBW_PLATFORM: linux
           CIBW_ARCHS: universal2
           CIBW_REPAIR_WHEEL_COMMAND: ""          
 
