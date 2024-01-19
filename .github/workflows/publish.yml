@@ -47,7 +47,7 @@ jobs:
         run: |
           mv quarto-*-win.zip quarto
           pushd quarto
-          tar -xvf quarto-*-win.zip
+          unzip quarto-*-win.zip
           ls -la
           rm quarto-*-win.zip
           
