@@ -50,10 +50,6 @@ jobs:
           unzip quarto-*-win.zip
           ls -la
           rm quarto-*-win.zip
-          
-          mv -v quarto-*/share .
-          mv -v quarto-*/bin .
-          rm -rf quarto-*/
           popd
           
       - uses: robinraju/release-downloader@v1.8
