@@ -64,9 +64,9 @@ jobs:
 
           tar -xvf quarto-*-linux-arm64.tar.gz
           rm quarto-*-linux-arm64.tar.gz
-          mv quarto-*/share .
-          mv quarto-*/bin .
-          rm -rf quarto-*/
+          mv -v quarto-*/share .
+          mv -v quarto-*/bin .
+          rm -rfv quarto-*/
           popd
 
       - name: Initialize Modules
