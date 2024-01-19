@@ -99,9 +99,9 @@ jobs:
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_BUILD_VERBOSITY: 1
-          CIBW_BUILD: cp3*-win_amd64
+          CIBW_BUILD: cp3*-win_x86
           CIBW_PLATFORM: windows
-          CIBW_ARCHS: AMD64
+          CIBW_ARCHS: x86
           CIBW_REPAIR_WHEEL_COMMAND: ""
       
       - name: Build Linux wheels
@@ -109,9 +109,9 @@ jobs:
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_BUILD_VERBOSITY: 1
-          CIBW_BUILD: cp3*-manylinux_x86_64
+          CIBW_BUILD: cp3*-manylinux_aarch64
           CIBW_PLATFORM: linux
-          CIBW_ARCHS: x86_64
+          CIBW_ARCHS: aarch64
           CIBW_REPAIR_WHEEL_COMMAND: ""          
 
       - name: Upload wheels
