@@ -43,6 +43,7 @@ jobs:
           fileName: "quarto-*-win.zip"
 
       - if: contains(matrix.os, 'windows')
+        shell: bash
         run: |
           mv quarto-*-win.zip quarto
           pushd quarto
