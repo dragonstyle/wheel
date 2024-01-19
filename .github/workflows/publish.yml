@@ -5,7 +5,6 @@ name: Build Quarto Wheels
 on:
   push:
     workflow_dispatch:
-
 jobs:
   build_wheels:
     name: Wheel on ${{ matrix.os }}
@@ -69,7 +68,8 @@ jobs:
       - name: Install cibuildwheel
         run: python -m pip install cibuildwheel==2.16.2
 
-      - name: Build wheels
+      - name: Build MacOS wheels
+        if: contains(matrix.os, 'ubuntu')
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
           CIBW_BUILD_VERBOSITY: 1
@@ -77,6 +77,26 @@ jobs:
           CIBW_PLATFORM: macos
           CIBW_ARCHS: universal2
           CIBW_REPAIR_WHEEL_COMMAND: ""
+
+      - name: Build Windows wheels
+        if: contains(matrix.os, 'windows')
+        run: python -m cibuildwheel --output-dir wheelhouse
+        env:
+          CIBW_BUILD_VERBOSITY: 1
+          CIBW_BUILD: cp3*-win_amd64
+          CIBW_PLATFORM: win
+          CIBW_ARCHS: universal2
+          CIBW_REPAIR_WHEEL_COMMAND: ""
+      
+      - name: Build Linux wheels
+        if: contains(matrix.os, 'ubuntu')
+        run: python -m cibuildwheel --output-dir wheelhouse
+        env:
+          CIBW_BUILD_VERBOSITY: 1
+          CIBW_BUILD: cp3*-manylinux_x86_64
+          CIBW_PLATFORM: manylinux
+          CIBW_ARCHS: universal2
+          CIBW_REPAIR_WHEEL_COMMAND: ""          
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
