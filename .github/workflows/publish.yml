@@ -2,9 +2,7 @@
 # and push wheel files
 name: Build Quarto Wheels
 
-on:
-  push:
-    workflow_dispatch:
+on: workflow_dispatch
 jobs:
   build_wheels:
     name: Wheel on ${{ matrix.os }}
