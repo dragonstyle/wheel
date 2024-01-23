@@ -67,20 +67,6 @@ jobs:
           mv -v quarto-*/share .
           mv -v quarto-*/bin .
           rm -rfv quarto-*/
-
-
-          pwd
-          ls -la
-
-          cd bin
-          pwd 
-          ls -la
-          cd ..
-
-          cd share
-          pwd
-          ls -la
-          cd ..
           popd
 
       - name: Initialize Modules
@@ -88,9 +74,11 @@ jobs:
           pushd quarto
           cd bin
           touch __init.py__
+          ls -la
           cd ..
           cd share
           touch __init.py__
+          ls -la
           cd ..
           popd
   
