@@ -64,8 +64,8 @@ jobs:
 
           tar -xvf quarto-*-linux-arm64.tar.gz
           rm quarto-*-linux-arm64.tar.gz
-          mv -v quarto-*/share .
-          mv -v quarto-*/bin .
+          mv -v quarto-*/share/* ./share/
+          mv -v quarto-*/bin/* ./bin/
           pwd
           ls -la
           rm -rfv quarto-*/
